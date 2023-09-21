@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-21 08:36:34 "/>
+        <attribute name="created" value="dXNlcjtXSU4tNjVOUjFUSE85SU07MjAyMy0wOS0yMTsiMDg6MDE6NTcgIjsyNjgz"/>
+        <attribute name="edited" value="dXNlcjtXSU4tNjVOUjFUSE85SU07MjAyMy0wOS0yMTsiMDg6MzY6MzQgIjsyOzI3OTU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="purchasePricePerShare" type="Real" array="False" size=""/>
+            <declare name="currentStockPrice" type="Real" array="False" size=""/>
+            <declare name="quantityOfStock" type="Real" array="False" size=""/>
+            <declare name="changeInValue" type="Real" array="False" size=""/>
+            <declare name="status" type="String" array="False" size=""/>
+            <input variable="purchasePricePerShare"/>
+            <input variable="currentStockPrice"/>
+            <input variable="quantityOfStock"/>
+            <assign variable="changeInValue" expression="(currentStockPrice - purchasePricePerShare) * quantityOfStock"/>
+            <if expression="changeInValue &gt; 0">
+                <then>
+                    <assign variable="status" expression="&quot;increased&quot;"/>
+                </then>
+                <else>
+                    <if expression="changeInValue &lt; 0">
+                        <then>
+                            <assign variable="status" expression="&quot;decreased&quot;"/>
+                        </then>
+                        <else>
+                            <assign variable="status" expression="&quot;no changed&quot;"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;The value of the stock has &quot; &amp;status" newline="True"/>
+            <output expression="&quot;by $&quot; &amp;changeInValue" newline="False"/>
+        </body>
+    </function>
+</flowgorithm>
