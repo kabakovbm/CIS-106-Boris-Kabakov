@@ -1,1 +1,2 @@
-# CIS-106-Boris-Kabakov
+Boris Kabakov
+kb93987@mail.harpercollege.edu
