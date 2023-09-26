@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-26 08:49:43 "/>
+        <attribute name="created" value="dXNlcjtXSU4tNjVOUjFUSE85SU07MjAyMy0wOS0yNjsiMDg6NDM6MDggIjsyNjkw"/>
+        <attribute name="edited" value="dXNlcjtXSU4tNjVOUjFUSE85SU07MjAyMy0wOS0yNjsiMDg6NDk6NDMgIjsxOzI4MDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity" type="Real" array="False" size=""/>
+            <declare name="unitPrice" type="Real" array="False" size=""/>
+            <declare name="extendedPrice" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="quantity"/>
+            <if expression="quantity &gt;= 1000">
+                <then>
+                    <assign variable="unitPrice" expression="3.00"/>
+                </then>
+                <else>
+                    <assign variable="unitPrice" expression="5.00"/>
+                </else>
+            </if>
+            <assign variable="extendedPrice" expression="quantity * unitPrice"/>
+            <assign variable="tax" expression="extendedPrice * 0.07"/>
+            <assign variable="total" expression="extendedPrice + tax"/>
+            <output expression="&quot;Quantity: &quot; &amp;quantity" newline="True"/>
+            <output expression="&quot;Unit price: &quot;&amp;unitPrice" newline="True"/>
+            <output expression="&quot;Extended price: &quot;&amp;extendedPrice" newline="True"/>
+            <output expression="&quot;Tax (7%): &quot;&amp;tax" newline="True"/>
+            <output expression="&quot;Total: &quot;&amp;total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
