@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-17 08:42:34 "/>
+        <attribute name="created" value="dXNlcjtXSU4tNjVOUjFUSE85SU07MjAyMy0xMC0xNzsiMDg6Mjg6MjEgIjsyNjgw"/>
+        <attribute name="edited" value="dXNlcjtXSU4tNjVOUjFUSE85SU07MjAyMy0xMC0xNzsiMDg6NDI6MzQgIjsxOzI3ODg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="continueProgram" type="String" array="False" size=""/>
+            <assign variable="continueProgram" expression="&quot;Yes&quot;"/>
+            <declare name="studentCount" type="Integer" array="False" size=""/>
+            <assign variable="studentCount" expression="0"/>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="examScore1" type="Real" array="False" size=""/>
+            <declare name="examScore2" type="Real" array="False" size=""/>
+            <declare name="averageScore" type="Real" array="False" size=""/>
+            <while expression="continueProgram == &quot;Yes&quot;">
+                <input variable="continueProgram"/>
+                <if expression="continueProgram != &quot;Yes&quot;">
+                    <then>
+                        <breakpoint expression="" always="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <input variable="lastName"/>
+                <input variable="examScore1"/>
+                <input variable="examScore2"/>
+                <assign variable="AverageScore" expression="(examScore1 + examScore2) / 2"/>
+                <output expression="&quot;Last Name: &quot;&amp;lastName" newline="True"/>
+                <output expression="&quot;Average Exam Score: &quot;&amp;averageScore" newline="True"/>
+                <assign variable="studentCount" expression="studentCount + 1"/>
+                <input variable="continueProgram"/>
+            </while>
+            <output expression="&quot;Number of students who entered data: &quot;&amp;studentCount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
